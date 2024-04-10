@@ -1,39 +1,46 @@
 <!DOCTYPE html>
-<html>
-
-<head>
-    <title>LA TV Shows | Home</title>
-    <meta name="description" content="A Catalog of Shows Set in Los Angeles">
-    <link rel="stylesheet" href="style.css" />
-    <script type="text/javascript" src="scripts.js"></script>
-</head>
-
-<body>
-    <header class="main-header">
-        <h1 class="title">LA TV Shows</h1>
-    </header>
-    <div id="card-container">
-        
-    </div>
-    <div class="card" style="display: none;">
-        <div class="card-content">
-            <h2>TV Show Title</h2>
-            <img src="" alt="TV Show Poster">
-            <ul>
-                <li>Bullet Point 1</li>
-                <li>Bullet Point 2</li>
-                <li>Bullet Point 3</li>
-            </ul>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demani Snap Project</title>
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+        <div id="logosearch">
+        <div id="logo">
+            <h2>Pop Shop</h2>
         </div>
+      <div id="search-container">
+        <input
+          type="search"
+          id="search-input"
+          placeholder="Search product"
+        />
+        <button id="search">Search</button>
+      </div>
     </div>
-    <div class="footer">
-        <button onclick="quoteAlert();">
-            Get A Quote!
+      <div id="buttons">
+        <button class="button-value" onclick="filterProduct('all')">All</button>
+        <button class="button-value" onclick="filterProduct('comics')">
+          Comics
         </button>
-        <button onclick="removeLastCard();">
-            Remove A Card!
+        <button class="button-value" onclick="filterProduct('consoles')">
+          Consoles
         </button>
+        <button class="button-value" onclick="filterProduct('games')">
+          Games
+        </button>
+      </div>
+      <div id="products"></div>
     </div>
-</body>
-
+    <!-- Script -->
+    <script src="app.js"></script>
+  </body>
 </html>
