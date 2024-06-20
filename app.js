@@ -118,27 +118,36 @@ let products = {
         }
       }
     });
+
+    if (data != "") { displaySearch(); }
   }
   
   //Search button click
   document.getElementById("search").addEventListener("click", () => {
-    //initializations
-    let searchInput = document.getElementById("search-input").value;
-    let elements = document.querySelectorAll(".product-name");
-    let cards = document.querySelectorAll(".card");
-  
-    //loop through all elements
-    elements.forEach((element, index) => {
-      //check if text includes the search value
-      if (element.innerText.includes(searchInput.toUpperCase())) {
-        //display matching card
-        cards[index].classList.remove("hide");
-      } else {
-        //hide others
-        cards[index].classList.add("hide");
-      }
-    });
+    displaySearch();
   });
+
+  function displaySearch()
+  {
+        //initializations
+        let searchInput = document.getElementById("search-input").value;
+        data = searchInput;
+        let elements = document.querySelectorAll(".product-name");
+        let cards = document.querySelectorAll(".card");
+      
+        //loop through all elements, displaying all default
+        elements.forEach((element, index) => {
+          //check if text does not include the search value
+            if (!element.innerText.includes(searchInput.toUpperCase())) {
+            //hide matching card
+            cards[index].classList.add("hide"); // hiding
+            }
+            if (element.innerText(searchInput) == "")
+              {
+                cards[index].classList.remove("hide"); // hiding
+              }
+        });
+  }
   
   //Initially display all products
   window.onload = () => {
